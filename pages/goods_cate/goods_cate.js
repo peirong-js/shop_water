@@ -68,6 +68,7 @@ Page({
   getAllCategory:function(){
     var that = this;
     getCategoryList().then(res=>{
+      console.log(res)
       that.setData({
         productList: res.data
       });
