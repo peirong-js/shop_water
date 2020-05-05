@@ -95,3 +95,6 @@
 </view> 
 
 <authorize bind:onLoadFun='onLoadFun' isGoIndex='{{isGoIndex}}' iShidden="{{iShidden}}" isAuto="{{isAuto}}"></authorize>
+
+
+<navigator url="../map_cs/map_cs" style="width:200rpx;height:200rpx">map测试</navigator>
