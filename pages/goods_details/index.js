@@ -65,6 +65,13 @@ Page({
    * 登录后加载
    * 
   */
+ onShow:function(){
+   let that = this
+   setTimeout(function(){
+    console.log(that.data.storeInfo);
+   },10000)
+  
+ },
   onLoadFun:function(e){
     this.setData({ isLog:true});
     this.getCouponList();

@@ -2,6 +2,9 @@ const app = getApp();
 
 import { getIndexData, getCoupons } from '../../api/api.js';
 import Util from '../../utils/util.js';
+// 引入SDK核心类
+var QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
+var qqmapsdk;
 
 Page({
   /**
@@ -46,6 +49,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 实例化API核心类
+    qqmapsdk = new QQMapWX({
+      key: 'OKJBZ-PTSRP-YLWDY-LZPAH-5YFXS-3ZFUW'
+    });
+    this.get_location();
     this.setData({
       navH: app.globalData.navHeight
     });
@@ -98,9 +106,10 @@ Page({
         likeInfo: res.data.likeInfo,
         lovelyBanner: res.data.lovely.length ? res.data.lovely[0] : {},
         benefit: res.data.benefit,
-        logoUrl: res.data.logoUrl,
+        /* logoUrl: "广东省东莞市", */
         couponList: res.data.couponList,
       });
+      console.log(res.data.info.bastList);
       wx.getSetting({
         success(res) {
           if (!res.authSetting['scope.userInfo']) {
@@ -110,8 +119,53 @@ Page({
           }
         }
       });
+    });
+
+  },
+
+  //获取当前位置
+  get_location:function(){
+    let that = this;
+    
+
+    wx.getLocation({
+      type: 'gcj02',
+      success(res) {
+        console.log(res)
+        // 逆地址解析
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: address => {
+            /* this.setData({
+              addressRes: address.result
+            }) */
+            console.log(address.result)
+            that.setData({
+              address:address.result.formatted_addresses.recommend
+            })
+          },
+          fail(error) {
+            console.log('逆地址解析错误');
+          }
+        })
+      },
+      complete(e) {
+        console.log(e)
+        if (e.errMsg == 'getLocation:fail auth deny') {
+          wx.showToast({
+            icon: 'none',
+            title: '您取消了定位,地图功能将受影响！！！',
+          });
+        }
+      }
     })
   },
+
+
+
   /**
    * 生命周期函数--监听页面隐藏
    */
