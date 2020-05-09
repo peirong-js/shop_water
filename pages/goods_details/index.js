@@ -65,6 +65,7 @@ Page({
    * 登录后加载
    * 
   */
+
  onShow:function(){
    let that = this
    setTimeout(function(){
@@ -92,6 +93,55 @@ Page({
       that.setData({ 'sharePacket.isState': res.data.is_promoter ? false : true, uid: res.data.uid });
     });
   },
+
+  //获取用户当前位置
+  get_location:function(){
+    let that = this;
+    wx.getLocation({
+      type: 'gcj02',
+      success(res) {
+        console.log(res)
+        that.setData({
+          user_position_latitude:res.latitude,
+          user_position_longitude:res.longitude,
+        })
+        that.getDistance(res.latitude,res.longitude,"23.020161","113.753916")
+      },
+      complete(e) {
+        console.log(e)
+        if (e.errMsg == 'getLocation:fail auth deny') {
+          wx.showToast({
+            icon: 'none',
+            title: '您取消了定位,地图功能将受影响！！！',
+          });
+        }
+      }
+    })
+  },
+
+  //计算位置距离
+  getDistance: function(lat1, lng1, lat2, lng2) {
+    lat1 = lat1 || 0;
+    lng1 = lng1 || 0;
+    lat2 = lat2 || 0;
+    lng2 = lng2 || 0;
+  
+    var rad1 = lat1 * Math.PI / 180.0;
+    var rad2 = lat2 * Math.PI / 180.0;
+    var a = rad1 - rad2;
+    var b = lng1 * Math.PI / 180.0 - lng2 * Math.PI / 180.0;
+    var r = 6378137;
+    var distance = r * 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(rad1) * Math.cos(rad2) * Math.pow(Math.sin(b / 2), 2)));
+    console.log(distance)
+    let distanceKm = `${(distance/1000).toFixed(2)}`;//转换成km
+          
+    this.setData({
+      distanceKm:distanceKm
+    })
+    return distance;
+  },
+
+
   /**
    * 购物车数量加和数量减
    * 
@@ -183,6 +233,8 @@ Page({
     //记录推广人uid
     if (options.spid) app.globalData.spid=options.spid;
     this.getGoodsDetails();
+    //定位距离
+    this.get_location();
   },
   setClientHeight:function(){
     if (!this.data.good_list.length) return ;
@@ -202,6 +254,7 @@ Page({
   getGoodsDetails:function(){
     var that=this;
     getProductDetail(that.data.id).then(res=>{
+      console.log(res);
       var storeInfo = res.data.storeInfo;
       var good_list = res.data.good_list || [];
       var count = Math.ceil(good_list.length / 6);
@@ -383,6 +436,7 @@ Page({
    * 
   */
   joinCart:function(e){
+    console.log(e);
     var formId = e.detail.formId;
     //是否登录
     if (app.globalData.isLog === false)

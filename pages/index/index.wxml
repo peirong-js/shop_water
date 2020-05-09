@@ -181,4 +181,4 @@
     </view>
 </view>
 <coupon-window window='{{window}}' couponList="{{couponList}}" bind:onColse="onColse"></coupon-window>
-<home></home>
+<!-- <home></home> -->
