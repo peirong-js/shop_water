@@ -123,7 +123,7 @@ Page({
       else valid[index].checked = false;
     }
     var validData = "cartList.valid";
-    this.setData({ 
+    this.setData({
       [validData]: valid,
       isAllSelect: value.length == this.data.cartList.valid.length,
       selectValue: value,

@@ -105,7 +105,7 @@ Page({
           user_position_latitude:res.latitude,
           user_position_longitude:res.longitude,
         })
-        that.getDistance(res.latitude,res.longitude,"23.020161","113.753916")
+        that.getDistance(res.latitude,res.longitude,"22.94631","113.665985")
       },
       complete(e) {
         console.log(e)
@@ -187,6 +187,7 @@ Page({
     var values = e.detail;
     var productSelect = this.data.productValue[values];
     var storeInfo = this.data.storeInfo;
+     
     if (productSelect){
       this.setData({
         ["productSelect.image"]: productSelect.image,
@@ -255,6 +256,11 @@ Page({
     var that=this;
     getProductDetail(that.data.id).then(res=>{
       console.log(res);
+      let store_location = res.data.storeInfo.store_location;
+      console.log(store_location);
+      that.setData({
+        store_location:store_location
+      })
       var storeInfo = res.data.storeInfo;
       var good_list = res.data.good_list || [];
       var count = Math.ceil(good_list.length / 6);

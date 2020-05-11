@@ -16,7 +16,7 @@ export default function request(api, method, data, {noAuth = false, noVerify = f
 
   return new Promise((reslove, reject) => {
     wx.request({
-      url: Url + '/api/' + api,
+      url: Url + '/api/' + api,  // https://shop.fb88it.cn/api/  'product/detail/' + id
       method: method || 'GET',
       header: header,
       data: data || {},

@@ -144,7 +144,7 @@ Page({
             }) */
             console.log(address.result)
             that.setData({
-              address:address.result.formatted_addresses.recommend
+              address:address.result.address_reference.town.title
             })
           },
           fail(error) {
