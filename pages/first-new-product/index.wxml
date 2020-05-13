@@ -1,6 +1,6 @@
 <navbar parameter='{{parameter}}'></navbar>
 <view class='quality-recommend'>
-   <swipers imgUrls="{{imgUrls}}"></swipers>
+   <!-- <swipers imgUrls="{{imgUrls}}"></swipers> -->
    <view class='title acea-row row-center-wrapper'>
       <view class='line'></view>
       <view class='name'><text class='iconfont {{icon}}'></text>{{name}}</view>

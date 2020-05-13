@@ -18,7 +18,7 @@
             </block>
         </swiper>
     </view>
-    <view class='nav acea-row' wx:if="{{menus.length}}">
+    <!-- <view class='nav acea-row' wx:if="{{menus.length}}">
       <block wx:for="{{menus}}" wx:key>
         <navigator class='item' wx:if="{{item.show == '1'}}" url='{{item.url}}'  open-type='switchTab' hover-class='none'>
           <view class='pictrue'><image src='{{item.pic}}'></image></view>
@@ -29,8 +29,26 @@
           <view>{{item.name}}</view>
         </navigator>
       </block> 
+    </view> -->
+    <view class='nav acea-row'>
+      <navigator class='item' url='/pages/goods_cate/goods_cate'  open-type='switchTab' hover-class='none'>
+          <view class='pictrue'><image src='/images/fl.png'></image></view>
+          <view>商品分类</view>
+      </navigator>
+      <navigator class='item' url='/pages/user_get_coupon/index' hover-class='none'>
+          <view class='pictrue'><image src='/images/yhq.png'></image></view>
+          <view>优惠券</view>
+      </navigator>
+      <navigator class='item' url='/pages/user_sgin/index' hover-class='none'>
+          <view class='pictrue'><image src='/images/qd.png'></image></view>
+          <view>签到</view>
+      </navigator>
+      <navigator class='item' url='/pages/user_goods_collection/index' hover-class='none'>
+          <view class='pictrue'><image src='/images/sc.png'></image></view>
+          <view>我的收藏</view>
+      </navigator>
     </view>
-    <view class='news acea-row row-between-wrapper' wx:if="{{itemNew.length}}">
+    <!-- <view class='news acea-row row-between-wrapper' wx:if="{{itemNew.length}}">
        <view class='pictrue'><image src='/images/news.png'></image></view>
        <view class='swiperTxt'>
             <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="2500" duration="{{duration}}" vertical="true" circular="true">
@@ -54,8 +72,8 @@
                   </block>
               </swiper> 
        </view>
-    </view>
-    <view class='specialArea acea-row row-between-wrapper' wx:if="{{activityList.length}}">
+    </view> -->
+    <!-- <view class='specialArea acea-row row-between-wrapper' wx:if="{{activityList.length}}">
       <block wx:for="{{activityList}}" wx:key>
        <navigator class='assemble' url='{{item.link}}' wx:if="{{index < 1}}">
           <image src='{{item.pic}}'></image>
@@ -76,8 +94,8 @@
             </navigator>
           </block>  
        </view>
-    </view>
-    <view class='wrapper' wx:if="{{fastList.length}}">
+    </view> -->
+    <!-- <view class='wrapper' wx:if="{{fastList.length}}">
        <view class='title acea-row row-between-wrapper'>
           <view class='text'>
              <view class='name line1'>快速选择</view>
@@ -97,7 +115,7 @@
               </block>  
            </scroll-view>
         </view>
-    </view>
+    </view> -->
      <view class='wrapper' wx:if="{{bastList.length}}">
        <view class='title acea-row row-between-wrapper'>
           <view class='text'>
@@ -106,7 +124,7 @@
           </view>
           <navigator class='more' hover-class="none" url='/pages/first-new-product/index?type=1'>更多<text class='iconfont icon-jiantou'></text></navigator>
        </view>
-       <view class='boutique' wx:if="{{bastBanner.length}}">
+       <!-- <view class='boutique' wx:if="{{bastBanner.length}}">
             <swiper  autoplay="true"  indicator-dots="true"
                  circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" indicator-color="rgba(252,65,65,0.3)" indicator-active-color="#fc4141">
                 <block wx:for="{{bastBanner}}" wx:key>
@@ -117,7 +135,7 @@
                   </swiper-item>
                 </block>
             </swiper>
-       </view>
+       </view> -->
        <goodList bastList="{{bastList}}"></goodList>
     </view>
     <view class='hotList' wx:if="{{likeInfo.length}}">
@@ -142,11 +160,11 @@
           </block>  
        </view>
     </view>
-    <view class='adver' wx:if="{{lovelyBanner.img}}">
+    <!-- <view class='adver' wx:if="{{lovelyBanner.img}}">
       <block>
         <image src='{{lovelyBanner.img}}'></image>
       </block>  
-    </view>
+    </view> -->
      <view class='wrapper' wx:if="{{firstList.length}}">
        <view class='title acea-row row-between-wrapper'>
           <view class='text'>

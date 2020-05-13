@@ -37,7 +37,8 @@ Page({
     },
     window: false,
     iShidden:false,
-    navH: ""
+    navH: "",
+    /* is_switch:true, */
   },
   closeTip:function(){
     wx.setStorageSync('msg_key',true);
@@ -61,6 +62,14 @@ Page({
     if (options.scene) app.globalData.code = decodeURIComponent(options.scene);
     if (wx.getStorageSync('msg_key')) this.setData({ iShidden:true});
   },
+
+  /* Changswitch:function(){
+    var that = this;
+    that.setData({
+      is_switch: !this.data.is_switch
+    })
+ }, */
+ 
   catchTouchMove: function (res) {
     return false
   },

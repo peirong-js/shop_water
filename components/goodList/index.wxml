@@ -1,4 +1,4 @@
-       <view class='goodList'>
+<!--        <view class='goodList'>
           <block wx:for="{{bastList}}" wx:key>
             <navigator url='/pages/goods_details/index?id={{item.id}}' class='item acea-row row-between-wrapper'>
               <view class='pictrue'>
@@ -19,4 +19,25 @@
               <view class='iconfont icon-gouwuche cart-color acea-row row-center-wrapper'></view>
             </navigator>
           </block>   
-       </view>
+       </view> -->
+
+<view class='productList'>
+<view class='list acea-row row-between-wrapper'>
+     <navigator class='item bor' hover-class='none' wx:for='{{bastList}}' url='/pages/goods_details/index?id={{item.id}}' wx:key>
+        <view class='pictrue'><image src='{{item.image}}' class=''></image></view>
+        <view class='text'>
+           <view class='name line1'>{{item.store_name}}</view>
+           <view class='money font-color'>￥<text class='num'>{{item.price}}</text></view>
+           <view class='vip acea-row row-between-wrapper'>
+              <view class='vip-money' wx:if="{{item.vip_price && item.vip_price > 0}}">￥{{item.vip_price}}<image src='/images/vip.png'></image></view>
+              <!-- <view>已售{{item.sales}}件</view> -->
+              <view class='iconfont icon-gouwuche cart-color acea-row row-center-wrapper'></view>
+           </view>
+        </view>
+     </navigator>
+     <view class='loadingicon acea-row row-center-wrapper' wx:if='{{productList.length > 0}}'>
+        <text class='loading iconfont icon-jiazai' hidden='{{loading==false}}'></text>{{loadTitle}}
+     </view>
+   </view>
+
+</view>

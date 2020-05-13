@@ -18,14 +18,15 @@
    <view class='wrapper'>
       <view class='nav acea-row row-middle'>
          <view class='item' data-url='/pages/user_money/index' bindtap='goPages'>
-            <view>我的余额</view>
+            <view>我的水票</view>
             <view class='num'>{{userInfo.now_money || 0}}</view>
          </view>
-         <view class='item' wx:if="{{userInfo.is_promoter || userInfo.statu==2}}" data-url='/pages/user_spread_user/index' bindtap='goPages'>
-            <view>当前积分</view>
+         <!-- <view class='item' wx:if="{{userInfo.is_promoter || userInfo.statu==2}}" data-url='/pages/user_spread_user/index' bindtap='goPages'>
+            <view>当前佣金</view>
             <view class='num'>{{userInfo.brokerage_price || 0}}</view>
-         </view>
-         <view class='item' wx:else data-url='/pages/user_integral/index' bindtap='goPages'>
+         </view> -->
+         <view class="num_item"></view>
+         <view class='item' data-url='/pages/user_integral/index' bindtap='goPages'>
             <view>当前积分</view>
             <view class='num'>{{userInfo.integral || 0}}</view>
          </view>
@@ -85,6 +86,10 @@
               <view>{{item.name}}</view>
             </view>
             <button class='item' open-type='contact' hover-class='none'>
+              <view class='pictrue'><image src='/images/dfh.png'></image></view>
+              <view>水桶押金</view>
+            </button>
+            <button class='item' open-type='contact' hover-class='none'>
               <view class='pictrue'><image src='/images/customer.png'></image></view>
               <view>联系客服</view>
             </button>
@@ -97,10 +102,5 @@
 <authorize bind:onLoadFun='onLoadFun' isGoIndex='{{isGoIndex}}' iShidden="{{iShidden}}" isAuto="{{isAuto}}"></authorize>
 
 
-<navigator url="../map_cs/map_cs" style="width:600rpx;font-size:32rpx;margin-left:100rpx;margin-top:100rpx">map定位map逆解析测试</navigator>
-<view style="margin-left:100rpx;">
-   经度：23.02067
-</view>
-<view style="margin-left:100rpx;">
-   纬度：113.75179
-</view>
+<!-- <navigator url="../map_cs/map_cs" style="width:600rpx;font-size:32rpx;margin-left:100rpx;margin-top:100rpx">map定位map逆解析测试</navigator> -->
+
