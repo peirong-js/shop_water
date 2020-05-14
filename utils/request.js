@@ -21,6 +21,7 @@ export default function request(api, method, data, {noAuth = false, noVerify = f
       header: header,
       data: data || {},
       success: (res) => {
+        console.log(res)
         if (noVerify)
           reslove(res.data, res);
         else if (res.data.status == 200)
