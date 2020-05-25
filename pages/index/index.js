@@ -2,6 +2,7 @@ const app = getApp();
 
 import { getIndexData, getCoupons } from '../../api/api.js';
 import Util from '../../utils/util.js';
+import { getGroomList } from '../../api/store.js';
 // 引入SDK核心类
 var QQMapWX = require('../../utils/qqmap-wx-jssdk.js');
 var qqmapsdk;
@@ -87,6 +88,7 @@ Page({
    */
   onShow: function () {
     this.getIndexConfig();
+    this.getIndexGroomList();
     if(app.globalData.isLog && app.globalData.token) this.get_issue_coupon_list();
   },
   get_issue_coupon_list:function(){
@@ -94,6 +96,13 @@ Page({
     getCoupons({page:1,limit:3}).then(res=>{
       that.setData({ couponList: res.data });
       if (!res.data.length) that.setData({ window: false });
+    });
+  },
+  getIndexGroomList: function () {
+    var that = this;
+    getGroomList(1).then(res=>{
+      console.log(res)
+      that.setData({ imgUrls: res.data.banner, bastList: res.data.list })
     });
   },
   getIndexConfig:function(){
@@ -106,7 +115,7 @@ Page({
         activityList: res.data.activity,
         bastBanner: res.data.info.bastBanner,
         bastInfo: res.data.info.bastInfo,
-        bastList: res.data.info.bastList,
+        /* bastList: res.data.info.bastList, */
         fastInfo: res.data.info.fastInfo,
         fastList: res.data.info.fastList,
         firstInfo: res.data.info.firstInfo,
@@ -118,7 +127,7 @@ Page({
         /* logoUrl: "广东省东莞市", */
         couponList: res.data.couponList,
       });
-      console.log(res.data.info.bastList);
+      /* console.log(res.data.info.bastList); */
       wx.getSetting({
         success(res) {
           if (!res.authSetting['scope.userInfo']) {
