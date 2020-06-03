@@ -2,7 +2,17 @@
    <view class='navbarH' style='height:{{navH}}rpx;'>
       <view class='navbarCon acea-row row-center-wrapper' wx:if='{{parameter.navbar==0}}'>
          <view class='search acea-row row-middle' bindtap='setGoodsSearch'><text class='iconfont icon-xiazai5'></text>搜索商品</view>
-         <view class='logo'><view style="font-size:24rpx"><image src="/images/index_dw.png" style="width:25rpx;height:25rpx"></image>{{logoUrl}}</view></view>
+         <view class='logo'>
+            <view style="font-size:24rpx">
+               <image src="/images/index_dw.png" style="width:25rpx;height:25rpx"></image>
+               <block wx:if="{{logoUrl}}">
+                  {{logoUrl}}
+               </block>
+               <block wx:else>
+                  <text bindtap="Setting">点击定位</text>
+               </block>
+            </view>
+         </view>
       </view>
       <view class='navbarCon acea-row row-center-wrapper' wx:if='{{parameter.navbar==1}}'>
          <view class='name {{parameter.color==true?"on":""}} line1'>{{parameter.title}}</view>

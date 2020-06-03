@@ -52,7 +52,7 @@ Page({
         signList: that.data.signList,
         loadend: loadend,
         loading: false,
-        loadtitle: loadend ? "哼😕~我也是底线的~" : "加载更多"
+        loadtitle: loadend ? "没有更多了~~" : "加载更多"
       });
     }).catch(err=>{
       that.setData({ loading: false, loadtitle: '加载更多' });

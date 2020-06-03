@@ -31,12 +31,12 @@ Page({
   onLoad: function (options) {
 
   },
-  getRoutineHotSearch: function () {
+  /* getRoutineHotSearch: function () {
     var that = this;
     getSearchKeyword().then(res=>{
       that.setData({ hotSearchList: res.data });
     });
-  },
+  }, */
   getProductList:function(){
     var that = this;
     if(this.data.loading) return;
@@ -100,7 +100,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getRoutineHotSearch();
+    /* this.getRoutineHotSearch(); */
     this.getHostProduct();
   },
 

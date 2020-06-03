@@ -7,12 +7,12 @@
       </view>
       <view class='bnt' bindtap='searchBut'>搜索</view>
    </view>
-   <view class='title'>热门搜索</view>
+   <!-- <view class='title'>热门搜索</view>
    <view class='list acea-row'>
      <block wx:for="{{hotSearchList}}" wx:key>
       <view class='item' bindtap='setHotSearchValue' data-item="{{item}}">{{item}}</view>
      </block> 
-   </view>
+   </view> -->
    <view class='line'></view>
    <goodList bastList="{{bastList}}" wx:if="{{bastList.length > 0}}"></goodList>
    <view class='loadingicon acea-row row-center-wrapper' wx:if='{{bastList.length > 0}}'>

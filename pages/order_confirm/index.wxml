@@ -125,4 +125,4 @@
 <coupon-list-window coupon='{{coupon}}' bind:ChangCouponsClone="ChangCouponsClone" openType='{{openType}}' bind:ChangCoupons="ChangCoupons"></coupon-list-window>
 <address-window bind:changeTextareaStatus="changeTextareaStatus" address='{{address}}' pagesUrl="{{pagesUrl}}" id="address-window" bind:OnChangeAddress="OnChangeAddress"></address-window>
 <authorize bind:onLoadFun='onLoadFun'></authorize>
-<home></home>
+<!-- <home></home> -->

@@ -67,7 +67,7 @@ Page({
         reply: that.data.reply,
         loading: false,
         loadend: loadend,
-        loadTitle: loadend ? "😕人家是有底线的~~" : "加载更多",
+        loadTitle: loadend ? "没有更多了~~" : "加载更多",
         page: that.data.page + 1
       });
     }).catch(err=>{

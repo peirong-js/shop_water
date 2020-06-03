@@ -8,4 +8,4 @@
    </view>
    <goodList bastList="{{bastList}}" status="{{status}}"></goodList>
 </view>
-<home></home>
+<!-- <home></home> -->

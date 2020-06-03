@@ -49,11 +49,16 @@ Page({
       var collectProductList = res.data;
       var loadend = collectProductList.length < that.data.limit;
       console.log(collectProductList.length);
+      for(let x=0;x<collectProductList.length;x++){
+        if(collectProductList[x].store_name.length>17){
+          collectProductList[x].store_name=collectProductList[x].store_name.substring(0,17)+"..."
+        }
+      }
       that.data.collectProductList = app.SplitArray(collectProductList, that.data.collectProductList);
       that.setData({
         collectProductList: that.data.collectProductList,
         loadend: loadend,
-        loadTitle: loadend ? '我也是有底线的' : '加载更多',
+        loadTitle: loadend ? '没有更多了~~' : '加载更多',
         page: that.data.page + 1,
         loading: false
       });

@@ -87,5 +87,5 @@
   </view>
 </view>
 <authorize bind:onLoadFun='onLoadFun'></authorize>
-<home></home>
+<!-- <home></home> -->
 <payment payMode='{{payMode}}' pay_close="{{pay_close}}" bind:onChangeFun='onChangeFun' order_id="{{pay_order_id}}" totalPrice='{{totalPrice}}'></payment>

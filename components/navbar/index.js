@@ -29,6 +29,13 @@ Component({
     return:function(){
       wx.navigateBack();
     },
+    Setting: function () {
+      wx.openSetting({
+        success: function (res) {
+          console.log(res.authSetting)
+        }
+      });
+    }, 
     setGoodsSearch:function(){
        wx.navigateTo({
          url: '/pages/goods_search/index',

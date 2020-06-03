@@ -67,10 +67,6 @@ Page({
   */
 
  onShow:function(){
-   let that = this
-   setTimeout(function(){
-    console.log(that.data.storeInfo);
-   },10000)
   
  },
   onLoadFun:function(e){
@@ -105,7 +101,7 @@ Page({
           user_position_latitude:res.latitude,
           user_position_longitude:res.longitude,
         })
-        that.getDistance(res.latitude,res.longitude,"22.95631","113.565985")
+        that.getDistance(res.latitude,res.longitude,"22.94631","113.665985")
       },
       complete(e) {
         console.log(e)
@@ -116,7 +112,7 @@ Page({
           });
         }
       }
-    })
+    });
   },
 
   //计算位置距离
@@ -134,10 +130,16 @@ Page({
     var distance = r * 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(rad1) * Math.cos(rad2) * Math.pow(Math.sin(b / 2), 2)));
     console.log(distance)
     let distanceKm = `${(distance/1000).toFixed(2)}`;//转换成km
-          
     this.setData({
       distanceKm:distanceKm
     })
+    if(this.data.distanceKm>10){
+      wx.showToast({
+        title: '距离配送点大于10千米，超出配送范围',
+        icon: 'none',
+        duration: 3000
+      })
+     }
     return distance;
   },
 
@@ -600,7 +602,7 @@ Page({
   /**
    * 生成海报
   */
-  goPoster:function(){
+/*   goPoster:function(){
     var that = this;
     that.setData({ canvasStatus: true });
     var arr2 = [that.data.posterbackgd, that.data.storeImage, that.data.PromotionCode];
@@ -638,7 +640,7 @@ Page({
         }
       },
     });
-  },
+  }, */
   /*
   * 保存到手机相册
   */

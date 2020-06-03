@@ -27,10 +27,11 @@
         <view class='pictrue'><image src='{{item.image}}' class=''></image></view>
         <view class='text'>
            <view class='name line1'>{{item.store_name}}</view>
-           <view class='money font-color'>￥<text class='num'>{{item.price}}</text></view>
+           
            <view class='vip acea-row row-between-wrapper'>
-              <view class='vip-money' wx:if="{{item.vip_price && item.vip_price > 0}}">￥{{item.vip_price}}<image src='/images/vip.png'></image></view>
+              <!-- <view class='vip-money' wx:if="{{item.vip_price && item.vip_price > 0}}">￥{{item.vip_price}}<image src='/images/vip.png'></image></view> -->
               <!-- <view>已售{{item.sales}}件</view> -->
+              <view class='money font-color'>￥<text class='num'>{{item.price}}</text></view>
               <view class='iconfont icon-gouwuche cart-color acea-row row-center-wrapper'></view>
            </view>
         </view>

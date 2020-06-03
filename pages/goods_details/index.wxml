@@ -118,7 +118,7 @@
       </view>
       <view>购物车</view>
     </navigator>
-    <view class='bnt acea-row' wx:if="{{distanceKm<=100}}">
+    <view class='bnt acea-row' wx:if="{{distanceKm<=10}}">
       <form bindsubmit="joinCart" report-submit='true'>
         <button class='joinCart bnts' formType="submit">加入购物车</button>
       </form>
@@ -127,7 +127,7 @@
       </form>
     </view>
     <!-- 距离 > 10km -->
-    <view class='bnt acea-row' wx:if="{{distanceKm>100}}">
+    <view class='bnt acea-row' wx:if="{{distanceKm>10}}">
       <form>
         <button class='no_buy1 bnts'>加入购物车</button>
       </form>
@@ -145,10 +145,14 @@
       <view class='iconn'></view>
       发送给朋友
     </button>
-    <button class='contact' bindtap='goPoster' hover-class='none'>
+    <button open-type="share" class='contact' hover-class='none'>
+      <view class='iconn'></view>
+      发送给朋友
+    </button>
+    <!-- <button class='contact' bindtap='goPoster' hover-class='none'>
       <view class='iconn iconn1'></view>
       生成海报
-    </button>
+    </button> -->
   </action-sheet-item>
 </action-sheet>
 <!-- 海报展示 -->
@@ -165,4 +169,4 @@
 <authorize bind:onLoadFun="onLoadFun" isAuto="{{isAuto}}" iShidden="{{iShidden}}"></authorize>
 <!-- html转wxml -->
 <import src="/wxParse/wxParse.wxml" />
-<home></home>
+<!-- <home></home> -->

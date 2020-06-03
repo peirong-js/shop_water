@@ -82,6 +82,7 @@ Page({
     }
   },
   subOrder: function (event){
+    console.log(event)
     var formId = event.detail.formId, that = this, selectValue = that.data.selectValue;
     setFormId(formId);
     if (selectValue.length > 0){

@@ -9,8 +9,8 @@
                <view data-url='/pages/user_vip/index' class='member acea-row row-middle' wx:if="{{userInfo.vip}}" bindtap='goPages'>
                <image src='{{userInfo.vip_icon}}'></image>{{userInfo.vip_name}}</view>
             </view>
-            <view class='id' data-url='/pages/user_info/index' bindtap='goPages' wx:if='{{userInfo.phone}}'>ID：{{userInfo.uid || 0}}<text class='iconfont icon-bianji1'></text></view>
-            <view wx:else data-url='/pages/user_phone/index' bindtap='goPages'><text class="binding">绑定手机号</text></view>
+            <!-- <view class='id' data-url='/pages/user_info/index' bindtap='goPages' wx:if='{{userInfo.phone}}'>ID：{{userInfo.uid || 0}}<text class='iconfont icon-bianji1'></text></view>
+            <view wx:else data-url='/pages/user_phone/index' bindtap='goPages'><text class="binding">绑定手机号</text></view> -->
          </view>
       </view>
       <text class='iconfont icon-shezhi' data-url='/pages/user_info/index' bindtap='goPages'></text>
@@ -18,7 +18,7 @@
    <view class='wrapper'>
       <view class='nav acea-row row-middle'>
          <view class='item' data-url='/pages/user_money/index' bindtap='goPages'>
-            <view>我的水票</view>
+            <view>我的余额</view>
             <view class='num'>{{userInfo.now_money || 0}}</view>
          </view>
          <!-- <view class='item' wx:if="{{userInfo.is_promoter || userInfo.statu==2}}" data-url='/pages/user_spread_user/index' bindtap='goPages'>
@@ -85,9 +85,9 @@
               <view class='pictrue'><image src='{{item.pic}}'></image></view>
               <view>{{item.name}}</view>
             </view>
-            <button class='item' open-type='contact' hover-class='none'>
-              <view class='pictrue'><image src='/images/dfh.png'></image></view>
-              <view>水桶押金</view>
+            <button class='item' bindtap='goPages' data-url='/pages/user_sgin/index' hover-class='none'>
+              <view class='pictrue'><image src='/images/qd2.png'></image></view>
+              <view>签到</view>
             </button>
             <button class='item' open-type='contact' hover-class='none'>
               <view class='pictrue'><image src='/images/customer.png'></image></view>

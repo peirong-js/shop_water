@@ -31,21 +31,21 @@
       </block> 
     </view> -->
     <view class='nav acea-row'>
-      <navigator class='item' url='/pages/goods_cate/goods_cate'  open-type='switchTab' hover-class='none'>
+      <navigator class='item' url='/pages/user_money/index' hover-class='none'>
           <view class='pictrue'><image src='/images/fl.png'></image></view>
-          <view>商品分类</view>
-      </navigator>
-      <navigator class='item' url='/pages/user_get_coupon/index' hover-class='none'>
-          <view class='pictrue'><image src='/images/yhq.png'></image></view>
-          <view>优惠券</view>
-      </navigator>
-      <navigator class='item' url='/pages/user_sgin/index' hover-class='none'>
-          <view class='pictrue'><image src='/images/qd.png'></image></view>
-          <view>签到</view>
+          <view>我的账户</view>
       </navigator>
       <navigator class='item' url='/pages/user_goods_collection/index' hover-class='none'>
           <view class='pictrue'><image src='/images/sc.png'></image></view>
           <view>我的收藏</view>
+      </navigator>
+      <navigator class='item' url='/pages/user_get_coupon/index' hover-class='none'>
+          <view class='pictrue'><image src='/images/yhq.png'></image></view>
+          <view>领优惠券</view>
+      </navigator>
+      <navigator class='item' url='/pages/user_sgin/index' hover-class='none'>
+          <view class='pictrue'><image src='/images/qd.png'></image></view>
+          <view>每日签到</view>
       </navigator>
     </view>
     <!-- <view class='news acea-row row-between-wrapper' wx:if="{{itemNew.length}}">
@@ -138,7 +138,7 @@
        </view> -->
        <goodList bastList="{{bastList}}"></goodList>
     </view>
-    <view class='hotList' wx:if="{{likeInfo.length}}">
+    <!-- <view class='hotList' wx:if="{{likeInfo.length}}">
        <view class='hot-bg'>
           <view class='title acea-row row-between-wrapper'>
             <view class='text line1'><text class='label'>热门榜单</text>根据销量、搜索、好评等综合得出</view>
@@ -159,13 +159,13 @@
             </navigator>
           </block>  
        </view>
-    </view>
+    </view> -->
     <!-- <view class='adver' wx:if="{{lovelyBanner.img}}">
       <block>
         <image src='{{lovelyBanner.img}}'></image>
       </block>  
     </view> -->
-     <view class='wrapper' wx:if="{{firstList.length}}">
+     <!-- <view class='wrapper' wx:if="{{firstList.length}}">
        <view class='title acea-row row-between-wrapper'>
           <view class='text'>
              <view class='name line1'>首发新品<text class='new font-color'>NEW~</text></view>
@@ -196,7 +196,7 @@
           <navigator class='more' hover-class="none" url='/pages/promotional-items/index'>更多<text class='iconfont icon-jiantou'></text></navigator>
        </view>
        <promotionGood benefit="{{benefit}}"></promotionGood>
-    </view>
+    </view> -->
 </view>
 <coupon-window window='{{window}}' couponList="{{couponList}}" bind:onColse="onColse"></coupon-window>
 <!-- <home></home> -->

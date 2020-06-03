@@ -23,7 +23,7 @@
               <view class="name line1">{{ item.nickname }}</view>
               <view class="phone" wx:if="{{item.phone && item.user_type !='h5' }}">绑定手机号：{{ item.phone }}</view>
               <view class="phone" wx:elif="{{item.phone && item.user_type =='h5' }}">账号：{{ item.phone }}</view>
-              <view class="phone" wx:else>暂未绑定手机号</view>
+              <view class="phone" wx:else></view>
             </view>
           </view>
           <view
@@ -43,7 +43,7 @@
           <view>昵称</view>
           <view class='input'><input type='text' name='nickname' value='{{userInfo.nickname}}'></input></view>
         </view>
-        <view class='item acea-row row-between-wrapper'>
+        <!-- <view class='item acea-row row-between-wrapper'>
           <view>手机号码</view>
           <navigator url="/pages/user_phone/index" hover-class="none" class="input" wx:if="{{!userInfo.phone}}">
             点击绑定手机号<text class="iconfont icon-xiangyou"></text>
@@ -52,7 +52,7 @@
             <input type='text' disabled='true' name='phone' value='{{userInfo.phone}}' class='id'></input>
             <text class='iconfont icon-suozi'></text>
           </view>
-        </view>
+        </view> -->
         <view class='item acea-row row-between-wrapper'>
           <view>ID号</view>
           <view class='input acea-row row-between-wrapper'>
