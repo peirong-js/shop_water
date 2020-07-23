@@ -119,8 +119,8 @@
      <view class='wrapper' wx:if="{{bastList.length}}">
        <view class='title acea-row row-between-wrapper'>
           <view class='text'>
-             <view class='name line1'>精品推荐</view>
-             <view class='line1'>{{bastInfo}}</view>
+             <view class='name line1'>推荐</view>
+             <!-- <view class='line1'>{{bastInfo}}</view> -->
           </view>
           <navigator class='more' hover-class="none" url='/pages/first-new-product/index?type=1'>更多<text class='iconfont icon-jiantou'></text></navigator>
        </view>

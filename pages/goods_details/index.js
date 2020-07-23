@@ -101,7 +101,8 @@ Page({
           user_position_latitude:res.latitude,
           user_position_longitude:res.longitude,
         })
-        that.getDistance(res.latitude,res.longitude,"22.94631","113.665985")
+        that.getDistance(res.latitude,res.longitude,"22.95631","113.565985")
+        /* that.getDistance(res.latitude,res.longitude,"22.94631","113.665985") */
       },
       complete(e) {
         console.log(e)
